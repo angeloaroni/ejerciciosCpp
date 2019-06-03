@@ -1,2 +1,1 @@
- "Zrz";
-    // (*r).estado,
+	// cout << "Struct cantidad: " << (*vector).cantidad << endl;				

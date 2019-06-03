@@ -19,6 +19,7 @@ int main(int argc, char const *argv[])
         }else{
             throw 200;//captura el error
         } 
+        
         //creamos fichero de escritura
         ofstream escritura;
         escritura.open("division.txt");
