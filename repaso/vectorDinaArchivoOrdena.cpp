@@ -1,3 +1,4 @@
+// PUEDE ENTRAR EN EL EXAMENNNN
 // queremos guardar una coleccion indeterminada de objetos
 // (nombre-char) y cantidad-int, 
 // los guardamos en un archivo y podremos leer de el 
@@ -18,7 +19,8 @@ int *cantidad;
 int numObjeto = 0;
 string s;
 
-void altaObjetos(){     
+void altaObjetos(){   
+    //recomentable los malloc de los vectores de char esten en la mism afuncion en las qu se les llama  
     nombre[numObjeto] = (char*) malloc (100*sizeof(char));
 
     cout << "Introdusca nombre: ";
@@ -70,16 +72,22 @@ void eliminarPila(){
 }
 
 void ordenaBurbuja(){
-    string m;
-    for (int i = 0; i < 20; i++)
+    string texto;
+    int num;
+    for (int i = 0; i < numObjeto-1; i++)
     {
-        for (int x = i + 1; x < 20; x++)
+        for (int x = i + 1; x < numObjeto; x++)
         {
-            if (nombre[i] < nombre[x])
+            if ((string)nombre[i] > (string)nombre[x])//(string) obliga al vector que lo trate como un string y ordena toda la cadena
             {
-                m = nombre[i];
-                nombre[i] = nombre[x];
-                nombre[x] = m;
+                //usamos strcpy por que es un estring de 2 palabras                
+                texto = nombre[i];
+                strcpy(nombre[i] , nombre[x]);
+                strcpy(nombre[x] , texto.c_str());
+                //no usamos strcpy por que es un entero
+                num = cantidad[i];
+                cantidad[i] = cantidad[x];
+                cantidad[x] = num;
             }
             
         }
@@ -88,6 +96,7 @@ void ordenaBurbuja(){
 
 int main(int argc, char const *argv[])
 {
+    //recomentable que los malloc de INT esten dentro del MAIN
     cantidad = (int*) malloc (100*sizeof(int));
 
     int opcion = 0;
