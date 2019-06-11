@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
     //strcpy(frase, previo.c_str());//copiaria toda  lo de previo a frase
 
     aleatorio = rand()%10+1;//va del (0 al 9) +1 , osea del 1 al 10
-    for (int i = 0; i < tamanoPrevio; i++)
+    for (int i = 0; i < previo.length(); i++)
     {
         encriptada[i] = frase[i] + aleatorio;
     }

@@ -18,8 +18,7 @@ void verPila(int *pila, int indPila){
 	for (int i = 0; i < indPila; i++)
 	{
 		cout << pila[i] << " - ";
-	}
-	
+	}	
 }
 
 int borrarElementoPila(int indPila){
